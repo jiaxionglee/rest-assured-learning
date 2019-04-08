@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -17,8 +16,8 @@ import static org.hamcrest.Matchers.not;
  */
 class MemberTest {
 
-    static Member member;
-    String fetch_child="0";
+    private static Member member;
+    private String fetch_child="0";
 
     @BeforeEach
     void setUp() {
@@ -68,12 +67,8 @@ class MemberTest {
 
     @Test
     void batchDelete() {
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("csv_21552827968924");
-        list.add("csv_31552827968924");
-        System.out.println(list.toString());
 
-        member.batchDelete(list).then().statusCode(200)
+        member.batchDelete(new String[]{"csv_21552827968924","csv_31552827968924"}).then().statusCode(200)
                 .body("errcode",equalTo(0))
                 .body("errmsg",equalTo("deleted"));
 
@@ -85,5 +80,17 @@ class MemberTest {
     @Test
     void list() {
         member.list("1",fetch_child).then().statusCode(200);
+    }
+
+    @Test
+    void list_self() {
+        member.list_self("1",fetch_child).then().statusCode(200);
+    }
+
+    @Test
+    void update_self() {
+        member.update_self("csv_31552827968924").then().statusCode(200)
+                .body("errcode",equalTo(0))
+                .body("errmsg",equalTo("updated"));
     }
 }

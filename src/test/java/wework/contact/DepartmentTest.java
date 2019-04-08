@@ -42,8 +42,8 @@ class DepartmentTest {
 
     @Test
     void update() {
-        String id = department.create("20190317", "2").then().extract().path("id");
-        department.update("test", id)
+        Integer id = department.create("20190317", "2").then().extract().path("id");
+        department.update("test", String.valueOf(id))
                 .then()
                 .body("errcode", equalTo(0))
                 .body("errmsg", equalTo("updated"));

@@ -81,7 +81,7 @@ public class CacheManagerImpl implements CacheManager {
     }
 
     /**
-     * 清除所有缓存
+     * 清空缓存
      */
     public void clearAll() {
         caches.clear();
@@ -99,7 +99,7 @@ public class CacheManagerImpl implements CacheManager {
     }
 
     /**
-     * 缓存是否超时失效
+     * 缓存是否失效
      *
      * @param key
      * @return

@@ -18,13 +18,13 @@ public interface CacheManager {
     void putCache(String key, EntityCache cache);
 
     /**
-     * 存入缓存
+     * 存入缓存,
      *
      * @param key
-     * @param datas
+     * @param data
      * @param timeOut
      */
-    void putCache(String key, Object datas, long timeOut);
+    void putCache(String key, Object data, long timeOut);
 
     /**
      * 获取对应缓存
@@ -44,6 +44,7 @@ public interface CacheManager {
 
     /**
      * 获取所有缓存
+     *
      * @return
      */
     Map<String, EntityCache> getCacheAll();
@@ -57,7 +58,7 @@ public interface CacheManager {
     boolean isContains(String key);
 
     /**
-     * 清除所有缓存
+     * 清除缓存
      */
     void clearAll();
 
@@ -69,7 +70,7 @@ public interface CacheManager {
     void clearByKey(String key);
 
     /**
-     * 缓存是否超时失效
+     * 缓存是否失效
      *
      * @param key
      * @return

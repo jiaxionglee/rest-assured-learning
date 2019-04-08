@@ -24,15 +24,17 @@ public class TestCache {
             cacheManagerImpl.putCache("myTest", "myTest", 30 * 1000L);
             CacheListener cacheListener = new CacheListener(cacheManagerImpl);
             cacheListener.startListen();
+
             logger.info("test:" + cacheManagerImpl.getCacheByKey("test").getdata());
+            logger.info("all cache:" + cacheManagerImpl.getCacheAll());
             logger.info("myTest:" + cacheManagerImpl.getCacheByKey("myTest").getdata());
             try {
-                TimeUnit.SECONDS.sleep(5);
+                TimeUnit.SECONDS.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             logger.info("test:" + cacheManagerImpl.getCacheByKey("test"));
-            logger.info("myTest:" + cacheManagerImpl.getCacheByKey("myTest"));
+            logger.info("myTest:" + cacheManagerImpl.getCacheByKey("myTest").getdata());
         }
 
         /**

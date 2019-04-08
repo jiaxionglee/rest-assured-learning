@@ -1,0 +1,11 @@
+---
+openId: ""
+secret: "Wl80uneSo8YTh6K9sfdXUjLVVRhxEaJJKP911LjDOIA"
+corpid: "wwec3396e8b29f3ee9"
+contactSecret: "pwmI-L41hs6k0-nUrd92vwRLddMG8ZkuvgJTfzCOjVU"
+current: test
+env:
+  dev:
+    "test1": "ip1"
+  test:
+    "test1": "ip1"

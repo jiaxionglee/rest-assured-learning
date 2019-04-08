@@ -1,18 +1,14 @@
-package wework.contact;
+package wework.devtool;
 
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import wework.Api;
 import wework.Wework;
 
-import static io.restassured.RestAssured.given;
-
 /**
- * Created by jiaxiong on 2019-03-17 14:55
+ * Created by jiaxiong on 2019-03-24 17:11
  */
-public class Contact extends Api {
-
-    String random = String.valueOf(System.currentTimeMillis());
+public class Application extends Api {
 
     @Override
     public RequestSpecification getDefaultRequestSpecification(){

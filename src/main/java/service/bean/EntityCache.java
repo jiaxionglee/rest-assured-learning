@@ -10,12 +10,12 @@ public class EntityCache {
     private Object data;
 
     /**
-     * 设置数据失效时间,为0表示永不失效
+     * 过期时间, 0表示永不失效
      */
     private long timeOut;
 
     /**
-     * 最后刷新时间
+     * 最后更新时间
      */
     private long lastRefeshTime;
 
