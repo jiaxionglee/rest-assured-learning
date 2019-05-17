@@ -14,7 +14,7 @@ class ApiTest {
     @Test
     void templateFromYaml() {
         Api api=new Api();
-        api.templateFromYaml("/api/list.yaml",null).then().statusCode(200);
+        api.getResponseFromYaml("/api/list.yaml",null).then().statusCode(200);
     }
 
     @Test
